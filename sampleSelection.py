@@ -20,7 +20,7 @@ print(duplicate_rows)
 
 
 #Sampling
-total_samples = 50000
+total_samples = 10000
 sample_counts = (class_counts / class_counts.sum() * total_samples).astype(int)
 
 # Initialize an empty DataFrame to store the selected samples
@@ -39,7 +39,7 @@ if not os.path.exists("SampleDataset"):
     os.makedirs("SampleDataset")
 
 # Save selected_df as a new CSV file in the SampleDataset folder
-selected_df.to_csv(os.path.join("SampleDataset", "sampleJD.csv"), index=False)
+selected_df.to_csv(os.path.join("SampleDataset", "sampleJD10k.csv"), index=False)
 
 print("After Sampling")
 class_counts_percent = round((selected_df['Job Title'].value_counts() / len(selected_df)) * 100, 3)
